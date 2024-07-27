@@ -16,9 +16,9 @@ def get_requirements(file_path:str)->List[str]:
 
 setup (
     name="Xray",
-    version="0.0.1",
+    version="0.0.1", 
     author="Rohit Kanithi",
     author_email="rohitkanithi@gmail.com"
-    install_require=get_requirements(),
+    install_require=get_requirements("D:\DeepLearning\requirements_dev.txt"),
     package=find_packages(),
 )
