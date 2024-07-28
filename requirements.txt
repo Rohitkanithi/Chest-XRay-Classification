@@ -1,0 +1,8 @@
+bentoml
+torchvision (pytorch)
+joblib 
+tqdm (to visuluize the process)
+pip-chill
+wincertstore
+
+-e .
