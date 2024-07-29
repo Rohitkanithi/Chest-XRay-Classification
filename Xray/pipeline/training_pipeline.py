@@ -1,17 +1,17 @@
 import sys
-
+sys.path.append('D:/DeepLearning')
 from Xray.components.data_ingestion import DataIngestion
 from Xray.entity.artifact_entity import DataIngestionArtifact
 from Xray.entity.config_entity import DataIngestionConfig
 from Xray.exception import XRayException
 from Xray.logger import logging
 
-class Train_Pipeline:
+class TrainPipeline:
     def __init__(self):
         self.data_ingestion_config = DataIngestionConfig()
 
-        def start_data_ingestion(self) -> DataIngestionArtifact:
-            logging.info("Entered the start_date_ingestion method of TrainPipeline class")
+    def start_data_ingestion(self) -> DataIngestionArtifact:
+        logging.info("Entered the start_date_ingestion method of TrainPipeline class")
         try:
             logging.info("Getting the data from s3")
 
@@ -33,4 +33,4 @@ class Train_Pipeline:
 if __name__ == "__main__":
     train_pipeline=TrainPipeline()
 
-    train_pipeline=start_data_ingestion()
+    train_pipeline.start_data_ingestion()
