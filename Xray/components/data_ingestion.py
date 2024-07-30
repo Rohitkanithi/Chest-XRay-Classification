@@ -5,7 +5,7 @@ from Xray.Cloud_storage.s3_operations import S3Operation
 from Xray.entity.artifact_entity import DataIngestionArtifact
 from Xray.entity.config_entity import DataIngestionConfig
 from Xray.exception import XRayException
-from Xray.exception import logging
+from Xray.logger import logging
 
 class DataIngestion:
     def __init__(self, data_ingestion_config: DataIngestionConfig):

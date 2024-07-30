@@ -30,7 +30,15 @@ class TrainPipeline:
         except Exception as e:
             raise XRayException(e,sys)
         
-if __name__ == "__main__":
-    train_pipeline=TrainPipeline()
+    
+    def run_pipeline(self) -> None:
+        logging.info("Entered the run_pipeline method of TrainPipeline class")
 
-    train_pipeline.start_data_ingestion()
+        try:
+            data_ingestion_artifact: DataIngestionArtifact = self.start_data_ingestion()
+
+            logging.info("Exited the run_pipeline method of TrainPipeline class")
+        except Exception as e:
+            raise XRayException(e,sys)
+
+

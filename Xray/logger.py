@@ -1,17 +1,25 @@
+
 import logging
 import os
+from datetime import datetime
 
-from Xray.constant.training_pipeline import TIMESTAMP
+# Ensure the log directory path is correctly formatted
+log_directory = "D:\\DeepLearning\\logs"
+if not os.path.exists(log_directory):
+    os.makedirs(log_directory)
 
-LOG_FILE: str = f"{TIMESTAMP}.log"
-logs_path = os.path.join(os.getcwd(), "logs", TIMESTAMP)
+# Generate a log file name with the current date and time
+log_filename = datetime.now().strftime("%Y_%m_%d_%H_%M_%S") + ".log"
 
-os.makedirs(logs_path, exist_ok=True)
+# Combine the directory and file name to form the full path
+logs_path = os.path.join(log_directory, log_filename)
 
-LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
+# Now create the log file directory if it doesn't exist
+os.makedirs(log_directory, exist_ok=True)
 
+# Log setup code...
 logging.basicConfig(
-    filename=LOG_FILE_PATH,
+    filename=log_filename,
     format="[%(asctime)s] %(lineno)d %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO,
 )

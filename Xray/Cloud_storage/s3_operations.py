@@ -1,6 +1,6 @@
 import os
 import sys
-from Xray.exception import XrayExeption
+from Xray.exception import XRayException
 
 class S3Operation:
     def sync_folder_to_s3(self, folder:str, bucket_name: str, bucket_folder_name: str)-> None:
@@ -10,7 +10,7 @@ class S3Operation:
             )
             os.system(command)
         except Exception as e:
-            raise XrayExeption(e,sys)
+            raise XRayException(e,sys)
     
     def sync_folder_from_s3(self, folder:str, bucket_name: str, bucket_folder_name: str)-> None:
         try:
@@ -18,5 +18,5 @@ class S3Operation:
                 f"aws s3 sync {folder} s3://{bucket_name}/{bucket_folder_name}"
             )
         except Exception as e:
-            raise XrayExeption(e,sys)
+            raise XRayException(e,sys)
         
