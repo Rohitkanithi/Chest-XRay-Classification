@@ -20,7 +20,7 @@ class DataIngestionConfig:
 
         self.test_data_path: str = os.path.join(self.data_path, "test")
 
-
+@dataclass
 class DataTransformationConfig:
     def __init__(self):
         self.color_jitter_transforms: dict = {
@@ -52,9 +52,30 @@ class DataTransformationConfig:
         )
 
         self.train_transforms_file: str = os.path.join(
-            self.artifact_dir, TRAIN_TRANSFORM_FILE
+            self.artifact_dir, TRAIN_TRANSFORMS_FILE
         )
 
         self.test_transforms_file: str = os.path.join(
             self.artifact_dir, TEST_TRANSFORMS_FILE
         )
+
+@dataclass
+class ModelTrainerConfig:
+    def __init__(self):
+        self.artifact_dir: int = os.path.join(ARTIFACT_DIR, TIMESTAMP, "model_training")
+
+        self.trained_bentoml_model_name: str = "xray_model"
+
+        self.trained_model_path: int = os.path.join(
+            self.artifact_dir, TRAINED_MODEL_NAME
+        )
+
+        self.train_transforms_key: str = TRAIN_TRANSFORMS_KEY
+
+        self.epochs: int = EPOCH
+
+        self.optimizer_params: dict = {"lr": 0.01, "momentum": 0.8}
+
+        self.scheduler_params: dict = {"step_size": STEP_SIZE, "gamma": GAMMA}
+
+        self.device: device = DEVICE

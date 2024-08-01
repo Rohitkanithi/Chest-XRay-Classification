@@ -22,9 +22,17 @@ CENTERCROP: int = 224
 RANDOMROTATION: int = 10
 NORMALIZE_LIST_1: List[int] = [0.485, 0.456, 0.406]
 NORMALIZE_LIST_2: List[int] = [0.229, 0.224, 0.225]
-TRAIN_TRANSFORM_KEY: str = "xray_train_transforms"
-TRAIN_TRANSFORM_FILE: str = "train_transforms.pkl"
+TRAIN_TRANSFORMS_KEY: str = "xray_train_transforms"
+TRAIN_TRANSFORMS_FILE: str = "train_transforms.pkl"
 TEST_TRANSFORMS_FILE: str = "test_transforms.pkl"
 BATCH_SIZE: int = 2
 SHUFFLE: bool = False
 PIN_MEMORY: bool = True
+
+# Model trainer constant
+TRAINED_MODEL_DIR: str = "trained_model"
+TRAINED_MODEL_NAME: str = "model.pt"
+DEVICE: torch.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+STEP_SIZE: int = 6
+GAMMA: int = 0.5
+EPOCH: int = 1

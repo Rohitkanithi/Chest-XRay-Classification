@@ -1,4 +1,4 @@
-bentoml==1.0.10
+bentoml==1.0.25
 torchvision==0.14.1
 joblib==1.2.0
 tqdm==4.64.1
