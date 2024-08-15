@@ -1,12 +1,26 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
+'''
+Creating Model Architecture
+
+* First Layer is the input layer consisting of 3 input channels and output channels with kernel_size of 3*3, padding = 0 and bias = True.
+the activation function we are using is ReLu and performing batch normalization.
+* The we are performing max pooling to extarct the import features out of the image.
+* Similarly we are passing our model through 9 convolutional layers.
+* Finally we are passing out our model through output layer in which we are getting binary classification.
+'''
 
 class Net(nn.Module):
     def __init__(self):
         """
         Creating custom CNN architecture for Image classification
         """
+        '''
+        in_channels = 3 (RGB)
+        
+        '''
+
         super(Net, self).__init__()
 
         self.convolution_block1 = nn.Sequential(

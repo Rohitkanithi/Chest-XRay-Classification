@@ -4,6 +4,9 @@ joblib==1.2.0
 tqdm==4.64.1
 pip-chill==1.0.1
 wincertstore==0.2
+boto3
+mypy-boto3-s3
+streamlit
 dvc
 mlflow
 ipykernel
@@ -16,5 +19,6 @@ tox==3.25.1
 flake8==5.0.4
 mypy==0.971
 black==22.8.0
+
 
 #-e .

@@ -17,6 +17,19 @@ from Xray.logger import logging
 
 
 
+'''
+Transformation parameter  terms
+
+Resize: Resize the input image to the given image
+CenterCrop: Crops the given image at the center
+ColorJitter: Randomly change the brightness, contrast, saturation and hue of an image.
+RandomHorizontalFlip: Horizontally flip the given image randomly with a given probability
+RandomRotation: Rotate the image by angle
+ToTensor: Convert numpy.ndarray to tensor
+Normalize: Normalize a float tensor image with mean and standard deviation.
+'''
+
+
 class DataTransformation:
     def __init__(
         self,
@@ -89,6 +102,16 @@ class DataTransformation:
             raise XRayException(e, sys)
         
 
+
+    '''
+    Creating data loader:
+
+    - For our usecase will be using the default data loader for PyTorch
+    - We will be creating 2 data loaders one for training data and other for the test data
+    - Batch size is a hyperparameter which we can tweak according to our need and system
+    - we can provide Image shuffling True for training data and False for test data
+    - Pin memory is used to transfer the loaded dataset from CPU to GPU
+    '''
 
     
     def data_loader(

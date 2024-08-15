@@ -13,7 +13,7 @@ def get_requirements(file_path:str)->List[str]:
             requirements.remove(HYPEN_E_DOT)
 
     return requirements
-
+	
 setup (
     name="Xray",
     version="0.0.1", 
